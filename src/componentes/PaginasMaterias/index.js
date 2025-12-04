@@ -12,16 +12,31 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
 `;
 
 const LogoImage = styled.img`
     width: 250px;
     height: 150px;
+
+    @media (max-width: 480px) {
+        width: 180px;
+        height: 110px;
+    }
 `;
 
 const Titulo = styled.h1`
     font-size: 60px;
     font-weight: 1000;
+    text-align: center;
+
+    @media (max-width: 768px) {
+        font-size: 40px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 30px;
+    }
 `;
 
 const CardImagem = styled.div`
@@ -37,18 +52,33 @@ const CardConteudo = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 10px;
+    padding: 15px;
     background-color: rgba(154, 236, 237, 0.9);
     border: 2px solid white;
     border-radius: 10px;
     min-width: 250px;
-    width: 90%
+    width: 90%;
+
+    @media (max-width: 480px) {
+        width: 100%;
+        padding: 12px;
+    }
 `;
 
 const ImagemConteudo = styled.img`
     width: 350px;
     height: 200px;
     border-radius: 20px;
+
+    @media (max-width: 768px) {
+        width: 260px;
+        height: 150px;
+    }
+
+    @media (max-width: 480px) {
+        width: 200px;
+        height: 120px;
+    }
 `;
 
 const SecaoConteudo = styled.div`
@@ -58,12 +88,26 @@ const SecaoConteudo = styled.div`
     justify-items: center;
     width: 100%;
     margin-bottom: 50px;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
 `;
 
 const CardLinkVoltar = styled.div`
     position: absolute;
     top: 20px;
-    left: 20px; 
+    left: 20px;
+
+    @media (max-width: 480px) {
+        top: 10px;
+        left: 10px;
+    }
 `;
 
 const LinkVoltar = styled.a`
@@ -73,6 +117,11 @@ const LinkVoltar = styled.a`
     font-weight: bold;
     padding: 10px 20px;
     cursor: pointer;
+
+    @media (max-width: 480px) {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
 `;
 
 const TituloConteudo = styled.p`
@@ -81,6 +130,10 @@ const TituloConteudo = styled.p`
     text-transform: uppercase;
     text-align: center;
     color: black;
+
+    @media (max-width: 480px) {
+        font-size: 16px;
+    }
 `;
 
 const CardLinks = styled.div`
@@ -88,13 +141,20 @@ const CardLinks = styled.div`
     flex-direction: row;
     gap: 50px;
     margin-top: 10px;
+
+    @media (max-width: 480px) {
+        flex-direction: column;
+        gap: 8px;
+    }
 `;
 
 const Links = styled.a`
     color: black;
     text-decoration: none;
     font-weight: 700;
+    text-align: center;
 `;
+
 
 export default function PaginaMaterias() {
     const [materias, setMaterias] = useState([]);
