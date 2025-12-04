@@ -336,7 +336,7 @@ const AdicionarMateria = () => {
         } catch (err) {
             console.error("Erro na busca de produtos:", err);
             // Mensagem de erro 
-            setErro(`Erro de conexão com a API: ${URL_BASE_API}/produtos. Verifique se o servidor Node.js está rodando.`);
+            setErro(`Erro de conexão com a API: https://prostudy-back-end.vercel.app/produtos. Verifique se o servidor Node.js está rodando.`);
         } finally {
             setEstaCarregando(false);
         }
