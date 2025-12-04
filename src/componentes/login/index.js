@@ -7,23 +7,34 @@ import Logo from '../imagens/logoCortada.png'
 const Imagem = styled.img`
     width: 400px;
     height: 250px;
-    margin: 10px
+    margin: 10px;
+
+    @media (max-width: 480px) {
+        width: 250px;
+        height: auto;
+    }
 `;
 
 const Container = styled.div`
     background-color: #131D47;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 20px;
 `;
 
 const Label = styled.label`
     color: #fff;
     font-weight: bold;
     font-size: 20px;
-    margin-bottom: 10px
+    margin-bottom: 10px;
+
+    @media (max-width: 480px) {
+        font-size: 16px;
+        text-align: center;
+    }
 `;
 
 const Input = styled.input`
@@ -34,12 +45,19 @@ const Input = styled.input`
     text-align: center;
     margin-bottom: 10px;
     font-size: 20px;
+
+    @media (max-width: 480px) {
+        width: 260px;
+        height: 45px;
+        font-size: 16px;
+    }
 `;
 
 const CardLabelInput = styled.div`
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    align-items: center;
 `;
 
 const Botao = styled.button`
@@ -49,6 +67,12 @@ const Botao = styled.button`
     height: 45px;
     border-radius: 50px;
     font-size: 20px;
+
+    @media (max-width: 480px) {
+        width: 150px;
+        height: 40px;
+        font-size: 16px;
+    }
 `;
 
 const CardBotao = styled.div`
@@ -68,23 +92,38 @@ const CadastreSe = styled.a`
     text-decoration: none;
     color: #fff;
     font-size: 15px;
-    display: inline-block;
     margin-top: 10px;
+
+    @media (max-width: 480px) {
+        font-size: 13px;
+    }
 
     &:hover{
         cursor: pointer;
-        text-decoration: underline
+        text-decoration: underline;
     }
 `;
 
 const ErroAoLogar = styled.p`
     color: #fff;
     font-weight: bold;
+    font-size: 16px;
+    
+    @media (max-width: 480px) {
+        text-align: center;
+        font-size: 14px;
+    }
 `;
 
 const SucessoAoLogar = styled.p`
     color: #9AECED;
     font-weight: bold;
+    font-size: 16px;
+
+    @media (max-width: 480px) {
+        text-align: center;
+        font-size: 14px;
+    }
 `;
 
 export default function Login() {
