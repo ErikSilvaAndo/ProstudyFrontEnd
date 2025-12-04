@@ -6,7 +6,7 @@ import Logo from "../../../imagens/logo2.png";
 
 const Container = styled.div`
     background-color: #131D47;
-    height: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
