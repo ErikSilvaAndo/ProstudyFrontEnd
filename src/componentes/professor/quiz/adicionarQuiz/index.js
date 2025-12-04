@@ -144,12 +144,11 @@ export default function AdicionarQuiz() {
                 body: JSON.stringify({
                     id_materia: id_materia,
                     titulo: titulo,
-                    descricao: descricao,
                     link: link,
                 }),
             });
 
-            if (!id_materia || !titulo || !descricao || !link) {
+            if (!id_materia || !titulo || !link) {
                 alert("Preencha todos os campos")
             }
 
@@ -225,17 +224,7 @@ export default function AdicionarQuiz() {
                                 disabled={estaCarregando} 
                                 />
                     </CardLabelInput>
-                    
-                    <CardLabelInput>
-                        <Label>DESCRIÇÃO:</Label>
-                        <Input
-                            type="text"
-                            value={descricao}
-                            onChange={(e) => setDescricao(e.target.value)}
-                            required
-                            disabled={estaCarregando}
-                        />
-                    </CardLabelInput>
+
                     <CardLabelInput>
                         <Label>LINK:</Label>
                         <Input
