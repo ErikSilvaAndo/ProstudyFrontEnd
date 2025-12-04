@@ -71,7 +71,6 @@ const SecaoQuiz = styled.div`
   gap: 20px;
   width: 100%;
   max-width: 1000px;
-  padding: 20px;
 
   @media (max-width: 480px) {
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
