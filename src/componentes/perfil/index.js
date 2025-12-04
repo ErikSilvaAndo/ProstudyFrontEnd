@@ -150,7 +150,7 @@ export default function MeuPerfil() {
 
             const usuario = JSON.parse(usuarioString);
             const usuarioId = usuario.id;
-            const resposta = await fetch(`http://localhost:3000/usuarios/buscarUsuariosPorId/${usuarioId}`);
+            const resposta = await fetch(`https://prostudy-back-end.vercel.app/usuarios/buscarUsuariosPorId/${usuarioId}`);
             const dados = await resposta.json();
             return dados;
         } catch (erro) {
@@ -181,7 +181,7 @@ export default function MeuPerfil() {
             const usuario = JSON.parse(usuarioString);
             const usuarioId = usuario.id;
 
-            const resposta = await fetch(`http://localhost:3000/usuarios/salvarImagem/${usuarioId}`, {
+            const resposta = await fetch(`https://prostudy-back-end.vercel.app/usuarios/salvarImagem/${usuarioId}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

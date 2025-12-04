@@ -113,7 +113,7 @@ export default function PaginaMaterias() {
     useEffect(() => {
         const fetchSelecionarConteudo = async () => {
             try {
-                const resposta = await fetch(`http://localhost:3000/conteudos/getConteudosPorIdMateria/${id.id}`)
+                const resposta = await fetch(`https://prostudy-back-end.vercel.app/conteudos/getConteudosPorIdMateria/${id.id}`)
                 if(!resposta.ok){
                     throw new Error(`Erro ao listar todas as matérias: ${resposta.status}`);
                 }
@@ -132,7 +132,7 @@ export default function PaginaMaterias() {
     useEffect(() => {
         const fetchSelecionarMaterias = async () => {
             try {
-                const resposta = await fetch(`http://localhost:3000/materias/selecionarPorId/${id.id}`)
+                const resposta = await fetch(`https://prostudy-back-end.vercel.app/materias/selecionarPorId/${id.id}`)
                 if(!resposta.ok){
                     throw new Error(`Erro ao listar todas as matérias: ${resposta.status}`);
                 }

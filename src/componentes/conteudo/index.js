@@ -235,7 +235,7 @@ export default function Conteudo({id}) {
     useEffect (() => {
         const fetchMaterias = async () => {
             try {
-                const resposta = await fetch('http://localhost:3000/materias/selecionarTodasMaterias');
+                const resposta = await fetch('https://prostudy-back-end.vercel.app/materias/selecionarTodasMaterias');
                 if(!resposta.ok){
                     throw new Error(`Erro ao listar todas as matérias: ${resposta.status}`);
                 }
@@ -254,7 +254,7 @@ export default function Conteudo({id}) {
     useEffect(() => {
         const fetchMateriaisEmDestaque = async () => {
             try {
-                const resposta = await fetch('http://localhost:3000/conteudos/selecionarTodosConteudos');
+                const resposta = await fetch('https://prostudy-back-end.vercel.app/conteudos/selecionarTodosConteudos');
                 if(!resposta.ok){
                     throw new Error(`Erro ao listar os conteúdos ${resposta.status}`);
                 }
@@ -299,7 +299,7 @@ export default function Conteudo({id}) {
     
                 const usuario = JSON.parse(usuarioString);
                 const usuarioId = usuario.id;
-                const resposta = await fetch(`http://localhost:3000/usuarios/buscarUsuariosPorId/${usuarioId}`);
+                const resposta = await fetch(`https://prostudy-back-end.vercel.app/usuarios/buscarUsuariosPorId/${usuarioId}`);
                 const dados = await resposta.json();
                 return dados;
             } catch (erro) {

@@ -136,7 +136,7 @@ export default function AdicionarQuiz() {
         setEstaCarregando(true);
 
         try {
-            const resposta = await fetch('http://localhost:3000/quiz/criarQuiz', {
+            const resposta = await fetch('https://prostudy-back-end.vercel.app/quiz/criarQuiz', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -180,7 +180,7 @@ export default function AdicionarQuiz() {
         useEffect(() => {
             const fetchMaterias = async () => {
                 try {
-                    const resposta = await fetch('http://localhost:3000/materias/selecionarTodasMaterias');
+                    const resposta = await fetch('https://prostudy-back-end.vercel.app/materias/selecionarTodasMaterias');
                     if (!resposta.ok) {
                         throw new Error(`Erro ao listar todas as matérias: ${resposta.status}`);
                     }

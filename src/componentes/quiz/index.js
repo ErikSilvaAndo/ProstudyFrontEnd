@@ -222,7 +222,7 @@ export default function ListarQuiz() {
     useEffect(() => {
         const fetchQuiz = async () => {
             try {
-                const resposta = await fetch('http://localhost:3000/quiz/listarQuiz');
+                const resposta = await fetch('https://prostudy-back-end.vercel.app/quiz/listarQuiz');
                 if (!resposta.ok) {
                     throw new Error(`Erro ao listar todas as matérias: ${resposta.status}`);
                 }
@@ -241,7 +241,7 @@ export default function ListarQuiz() {
     const executaExcluir = async (idQuiz) => {
         if (window.confirm(`Tem certeza que deseja excluir o conteúdo ID ${idQuiz}?`)) {
             try {
-                const resposta = await fetch(`http://localhost:3000/quiz/deletarQuiz/${idQuiz}`, {
+                const resposta = await fetch(`https://prostudy-back-end.vercel.app/quiz/deletarQuiz/${idQuiz}`, {
                     method: 'DELETE'
                 });
                 setQuiz(prev => prev.filter(item => item.id_quiz !== idQuiz))

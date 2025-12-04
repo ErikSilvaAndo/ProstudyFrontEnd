@@ -146,7 +146,7 @@ export default function PaginaMateriasProfessor() {
     useEffect(() => {
         const fetchSelecionarConteudo = async () => {
             try {
-                const resposta = await fetch(`http://localhost:3000/conteudos/getConteudosPorIdMateria/${id.id}`)
+                const resposta = await fetch(`https://prostudy-back-end.vercel.app/conteudos/getConteudosPorIdMateria/${id.id}`)
                 if(!resposta.ok){
                     throw new Error(`Erro ao listar todas as matérias: ${resposta.status}`);
                 }
@@ -165,7 +165,7 @@ export default function PaginaMateriasProfessor() {
     useEffect(() => {
         const fetchSelecionarMaterias = async () => {
             try {
-                const resposta = await fetch(`http://localhost:3000/materias/selecionarPorId/${id.id}`)
+                const resposta = await fetch(`https://prostudy-back-end.vercel.app/materias/selecionarPorId/${id.id}`)
                 if(!resposta.ok){
                     throw new Error(`Erro ao listar todas as matérias: ${resposta.status}`);
                 }
@@ -184,7 +184,7 @@ export default function PaginaMateriasProfessor() {
         const executaExcluir = async (idConteudo) => {
         if(window.confirm(`Tem certeza que deseja excluir o conteúdo ID ${idConteudo}?`)){
             try {
-                const resposta = await fetch(`http://localhost:3000/conteudos/deletarConteudo/${idConteudo}`, {
+                const resposta = await fetch(`https://prostudy-back-end.vercel.app/conteudos/deletarConteudo/${idConteudo}`, {
                     method: 'DELETE'
                 });
                 setConteudos(prev => prev.filter(item => item.id_conteudo !== idConteudo))

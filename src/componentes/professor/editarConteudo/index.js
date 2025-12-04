@@ -106,8 +106,6 @@ const converterParaBase64 = (arquivo) => {
     });
 };
 
-const URL_BASE_API = 'http://localhost:3000'; 
-
 const FormularioProduto = ({ aoAdicionarProduto }) => {
     const [titulo, setTitulo] = useState('');
     const [link, setLink] = useState('');
@@ -153,7 +151,7 @@ try {
         arquivoBase64 = await converterParaBase64(arquivo);
     }
 
-    const resposta = await fetch(`http://localhost:3000/conteudos/alterarConteudo/${id_conteudo}`, {
+    const resposta = await fetch(`https://prostudy-back-end.vercel.app/conteudos/alterarConteudo/${id_conteudo}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -189,7 +187,7 @@ try {
         useEffect(() => {
             const fetchSelecionaTodosConteudos = async () => {
                 try {
-                    const resposta = await fetch(`http://localhost:3000/conteudos/selecionarConteudoPorId/${id_conteudo}`);
+                    const resposta = await fetch(`https://prostudy-back-end.vercel.app/conteudos/selecionarConteudoPorId/${id_conteudo}`);
                     if(!resposta.ok){
                         throw new Error(`Erro ao listar os conteúdos ${resposta.status}`);
                     }
@@ -210,7 +208,7 @@ try {
         useEffect(() => {
             const fetchConteudo = async () => {
             try {
-                const resposta = await fetch(`http://localhost:3000/conteudos/selecionarConteudoPorId/${id_conteudo}`);
+                const resposta = await fetch(`https://prostudy-back-end.vercel.app/conteudos/selecionarConteudoPorId/${id_conteudo}`);
                 const data = await resposta.json();
                 setConteudo(data)
                 if (data.length > 0) {
@@ -230,7 +228,7 @@ try {
         useEffect (() => {
             const fetchMaterias = async () => {
                 try {
-                    const resposta = await fetch('http://localhost:3000/materias/selecionarTodasMaterias');
+                    const resposta = await fetch('https://prostudy-back-end.vercel.app/materias/selecionarTodasMaterias');
                     if(!resposta.ok){
                         throw new Error(`Erro ao listar todas as matérias: ${resposta.status}`);
                     }
@@ -340,7 +338,7 @@ const EditarConteudo = () => {
         setEstaCarregando(true);
         setErro(null);
         try {
-            const resposta = await fetch(`http://localhost:3000/conteudos/selecionarTodosConteudos`);
+            const resposta = await fetch(`https://prostudy-back-end.vercel.app/conteudos/selecionarTodosConteudos`);
             if (!resposta.ok) {
                 throw new Error(`Erro ao buscar: ${resposta.statusText}`);
             }
@@ -349,7 +347,7 @@ const EditarConteudo = () => {
         } catch (err) {
             console.error("Erro na busca de produtos:", err);
             // Mensagem de erro 
-            setErro(`Erro de conexão com a API: http://localhost:3000/conteudos/selecionarTodosConteudos. Verifique se o servidor Node.js está rodando.`);
+            setErro(`Erro de conexão com a API: https://prostudy-back-end.vercel.app/conteudos/selecionarTodosConteudos. Verifique se o servidor Node.js está rodando.`);
         } finally {
             setEstaCarregando(false);
         }

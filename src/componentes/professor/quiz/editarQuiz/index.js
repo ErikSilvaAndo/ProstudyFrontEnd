@@ -108,7 +108,7 @@ export default function EditarQuiz() {
                 setEstaCarregando(true);
         
         try {
-            const resposta = await fetch(`http://localhost:3000/quiz/editarQuiz/${id_quiz}`, {
+            const resposta = await fetch(`https://prostudy-back-end.vercel.app/quiz/editarQuiz/${id_quiz}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -140,7 +140,7 @@ export default function EditarQuiz() {
             useEffect (() => {
                 const fetchMaterias = async () => {
                     try {
-                        const resposta = await fetch('http://localhost:3000/materias/selecionarTodasMaterias');
+                        const resposta = await fetch('https://prostudy-back-end.vercel.app/materias/selecionarTodasMaterias');
                         if(!resposta.ok){
                             throw new Error(`Erro ao listar todas as matérias: ${resposta.status}`);
                         }
@@ -159,7 +159,7 @@ export default function EditarQuiz() {
         useEffect(() => {
             const fetchMateriaisEmDestaque = async () => {
                 try {
-                    const resposta = await fetch('http://localhost:3000/quiz/listarQuiz');
+                    const resposta = await fetch('https://prostudy-back-end.vercel.app/quiz/listarQuiz');
                     if(!resposta.ok){
                         throw new Error(`Erro ao listar os conteúdos ${resposta.status}`);
                     }
@@ -178,7 +178,7 @@ export default function EditarQuiz() {
     useEffect(() => {
         const fetchQuiz = async () => {
             try {
-                const resposta = await fetch(`http://localhost:3000/quiz/selecionarIdMateriaPorIdQuiz/${id_quiz}`);
+                const resposta = await fetch(`https://prostudy-back-end.vercel.app/quiz/selecionarIdMateriaPorIdQuiz/${id_quiz}`);
                 const data = await resposta.json();
                 setNomeMateria(data);
             } catch (error) {

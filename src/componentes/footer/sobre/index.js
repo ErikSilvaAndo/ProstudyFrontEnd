@@ -69,7 +69,6 @@ export default function SobreFooter() {
                 Acreditamos que a educação de qualidade deve acompanhar o ritmo da era digital. Por isso, desenvolvemos uma plataforma intuitiva que permite aos alunos esclarecer dúvidas, acessar materiais de estudo e se preparar melhor para o vestibular, enquanto professores podem organizar conteúdos, gerenciar atividades e acompanhar o progresso de suas turmas com facilidade.
                 Com base em tecnologias modernas como ReactJS, Node.js e PostgreSQL, a ProStudy une desempenho, segurança e inovação para oferecer uma experiência eficiente e confiável. Nosso trabalho é guiado por valores como empatia, compromisso e inovação, buscamos compreender as necessidades de quem aprende e ensinar de forma mais humana e próxima da realidade de cada estudante.
                 Mais do que uma ferramenta, a ProStudy é uma ponte entre a dúvida e a conquista. Nosso objetivo é inspirar o aprendizado contínuo, promover a autonomia e contribuir para uma educação que evolui junto com as pessoas.</Texto>
-                <LinkYoutube href="https://youtube.com/shorts/qMFsgscbgIk" target="_blank">Conheça mais sobre nosso projeto</LinkYoutube>
             </CardTexto>
         </Container>
     );

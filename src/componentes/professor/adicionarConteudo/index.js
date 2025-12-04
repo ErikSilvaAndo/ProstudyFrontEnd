@@ -132,8 +132,6 @@ const converterParaBase64 = (arquivo) => {
     });
 };
 
-const URL_BASE_API = 'http://localhost:3000';
-
 const FormularioProduto = ({ aoAdicionarProduto }) => {
     const [titulo, setTitulo] = useState('');
     const [link, setLink] = useState('');
@@ -172,7 +170,7 @@ const FormularioProduto = ({ aoAdicionarProduto }) => {
         try {
             const imagemBase64 = await converterParaBase64(imagem);
             const pdfBase64 = await converterParaBase64(arquivo);
-            const resposta = await fetch('http://localhost:3000/conteudos/adicionarConteudos', {
+            const resposta = await fetch('https://prostudy-back-end.vercel.app/conteudos/adicionarConteudos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -212,7 +210,7 @@ const FormularioProduto = ({ aoAdicionarProduto }) => {
     useEffect(() => {
         const fetchMaterias = async () => {
             try {
-                const resposta = await fetch('http://localhost:3000/materias/selecionarTodasMaterias');
+                const resposta = await fetch('https://prostudy-back-end.vercel.app/materias/selecionarTodasMaterias');
                 if (!resposta.ok) {
                     throw new Error(`Erro ao listar todas as matérias: ${resposta.status}`);
                 }
@@ -329,7 +327,7 @@ const AdicionarMateria = () => {
         setEstaCarregando(true);
         setErro(null);
         try {
-            const resposta = await fetch(`http://localhost:3000/conteudos/selecionarTodosConteudos`);
+            const resposta = await fetch(`https://prostudy-back-end.vercel.app/conteudos/selecionarTodosConteudos`);
             if (!resposta.ok) {
                 throw new Error(`Erro ao buscar: ${resposta.statusText}`);
             }

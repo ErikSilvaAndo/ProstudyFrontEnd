@@ -100,7 +100,7 @@ export default function Login() {
         setError('');
         setLoginSucesso(false);
         try {
-            const resposta = await fetch('http://localhost:3000/usuarios/login', {
+            const resposta = await fetch('https://prostudy-back-end.vercel.app/usuarios/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

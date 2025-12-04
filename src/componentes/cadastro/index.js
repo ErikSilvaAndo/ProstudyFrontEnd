@@ -110,7 +110,7 @@ export default function CadastroUsuario() {
             setCadastroSucesso(false);
 
             try {
-                const resposta = await fetch('http://localhost:3000/usuarios/registrar', {
+                const resposta = await fetch('https://prostudy-back-end.vercel.app/usuarios/registrar', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
