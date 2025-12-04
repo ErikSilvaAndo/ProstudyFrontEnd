@@ -370,6 +370,7 @@ export default function Conteudo({id}) {
         
 
     return (
+        <>
         <Container>
             <Header>
                 <LogoContainer>
@@ -426,6 +427,7 @@ export default function Conteudo({id}) {
                     ))}
             </SeccaoMaterias>
             </MainContent>
+        </Container>
             <CardRodape>
                 <Rodape>
                     <LinksRodape href="/sobre">SOBRE</LinksRodape>
@@ -434,7 +436,7 @@ export default function Conteudo({id}) {
                     <LinksRodape href="/politica">POLÍTICAS DE PRIVACIDADE</LinksRodape>
                 </Rodape>
             </CardRodape>
-        </Container>
+        </>
     );
 }
 
