@@ -33,7 +33,6 @@ const Label = styled.label`
 
     @media (max-width: 480px) {
         font-size: 16px;
-        text-align: center;
     }
 `;
 
@@ -57,7 +56,6 @@ const CardLabelInput = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    align-items: center;
 `;
 
 const Botao = styled.button`

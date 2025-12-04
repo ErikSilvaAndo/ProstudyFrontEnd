@@ -3,34 +3,40 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Logo from '../imagens/logoCortada.png' // Certifique-se de que o caminho está correto
 
-// --- Estilos Modificados ---
-
 const Container = styled.div`
     background-color: #131D47;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 20px;
 `;
 
 const VoltarBotao = styled.a`
     text-decoration: none;
     color: #fff;
     font-size: 15px;
-    display: inline-block;
     margin-top: 10px;
 
-    &:hover{
+    &:hover {
         cursor: pointer;
-        text-decoration: underline
+        text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 14px;
     }
 `;
 
 const Imagem = styled.img`
     width: 250px;
-    height: 150px;
-    margin: 10px
+    height: auto;
+    margin: 10px;
+
+    @media (max-width: 480px) {
+        width: 180px;
+    }
 `;
 
 const CardLabelInput = styled.div`
@@ -43,7 +49,11 @@ const Label = styled.label`
     color: #fff;
     font-weight: bold;
     font-size: 20px;
-    margin-bottom: 10px
+    margin-bottom: 8px;
+
+    @media (max-width: 480px) {
+        font-size: 16px;
+    }
 `;
 
 const Input = styled.input`
@@ -54,6 +64,12 @@ const Input = styled.input`
     text-align: center;
     margin-bottom: 10px;
     font-size: 20px;
+
+    @media (max-width: 480px) {
+        width: 260px;
+        height: 45px;
+        font-size: 16px;
+    }
 `;
 
 const Botao = styled.button`
@@ -68,18 +84,36 @@ const Botao = styled.button`
         opacity: 0.7;
         cursor: not-allowed;
     }
+
+    @media (max-width: 480px) {
+        width: 160px;
+        height: 40px;
+        font-size: 16px;
+    }
 `;
 
 const CadastroErro = styled.p`
     color: #fff;
     font-weight: bold;
+    margin-top: 10px;
     margin-bottom: 10px;
+    text-align: center;
+
+    @media (max-width: 480px) {
+        font-size: 14px;
+    }
 `;
 
 const CadastroSucesso = styled.p`
     color: #9AECED;
     font-weight: bold;
+    margin-top: 10px;
     margin-bottom: 10px;
+    text-align: center;
+
+    @media (max-width: 480px) {
+        font-size: 14px;
+    }
 `;
 
 const CardBotao = styled.div`
