@@ -4,194 +4,216 @@ import { href, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Logo from '../imagens/logo2.png'
 
-const Container = styled.div`
-    background-color: #131D47;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
 const Header = styled.header`
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0;
-    margin-bottom: 20px;
-`;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  margin-bottom: 20px;
 
-const LogoContainer = styled.div`
-    display: flex;
-    align-items: center;
+  @media (max-width: 480px) {
+    justify-content: center;
+    padding: 8px 0;
+    margin-bottom: 12px;
+  }
 `;
 
 const LogoImage = styled.img`
-    width: 200px;
-    height: 120px;
-    margin-right: 10px;
+  width: 200px;
+  height: 120px;
+  margin-right: 10px;
+  object-fit: contain;
+
+  @media (max-width: 480px) {
+    width: 130px;
+    height: auto;
+    margin-right: 6px;
+  }
 `;
 
 const Nav = styled.nav`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50px;
-    gap: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50px;
+  gap: 55px;
+
+  @media (max-width: 480px) {
+    position: static;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+  }
 `;
 
 const NavLink = styled.a`
-    color: #fff;
-    font-weight: bold;
-    font-size: 23px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    &:hover {
-        text-decoration: underline;
-        cursor: pointer;
-    }
+  color: #fff;
+  font-weight: bold;
+  font-size: 23px;
+  margin-bottom: 10px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
 `;
 
 const MainContent = styled.div`
-    width: 100%;
-    max-width: 1200px;
-    padding: 40px 0;
-    text-align: center;
-`;
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 0;
+  text-align: center;
 
-const SearchSection = styled.div`
-    margin-bottom: 40px;
+  @media (max-width: 480px) {
+    padding: 20px 0;
+  }
 `;
 
 const Titulo = styled.label`
-    font-size: 32px;
-    margin-bottom: 20px;
-`;
+  font-size: 32px;
+  margin-bottom: 20px;
 
-const SearchInputContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
+  @media (max-width: 480px) {
+    font-size: 22px;
+    width: 90%;
+    line-height: 26px;
+  }
 `;
 
 const SearchInput = styled.input`
-    width: 50%;
-    padding: 15px 50px 15px 20px;
-    border-radius: 50px;
-    border: none;
-    background-color: #9AECED;
-    font-size: 18px;
-    outline: none;
-    color: #131D47;
+  width: 50%;
+  padding: 15px 50px 15px 20px;
+  border-radius: 50px;
+  border: none;
+  background-color: #9AECED;
+  font-size: 18px;
+  outline: none;
+  color: #131D47;
+
+  @media (max-width: 480px) {
+    width: 90%;
+    padding: 12px 20px;
+    font-size: 16px;
+  }
 `;
 
 const SeccaoMaterias = styled.div`
-    display: flex;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
+    gap: 12px;
     justify-content: center;
-    gap: 20px;
+  }
 `;
 
 const MateriasCard = styled.div`
-    background-color: #9AECED;
-    border: 2px solid #9AECED;
-    border-radius: 10px;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    margin-top: 10px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 14px;
-    color: #000000ff;
+  background-color: #9AECED;
+  border: 2px solid #9AECED;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  color: #000000ff;
+
+  @media (max-width: 480px) {
+    width: 120px;
+    height: 90px;
+    font-size: 12px;
+  }
 `;
 
-const MateriasCardPesquisa = styled.div`
-    background-color: #131D47;
-    border: 2px solid #9AECED;
-    border-radius: 10px;
-    width: 120px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    margin-top: 10px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 14px;
-    color: #fff;
+const MateriasCardPesquisa = styled(MateriasCard)`
+  background-color: #131D47;
+  border: 2px solid #9AECED;
+  color: #fff;
 `;
 
 const Rodape = styled.footer`
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    margin-left: 150px;
-    padding: 20px 0;
-    background-color: #9AECED
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 150px;
+  padding: 20px 0;
+  background-color: #9AECED;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 0;
+    padding: 12px 10px;
+    align-items: center;
+  }
 `;
 
-const LinksRodape = styled.a`
-    color: #000;
-    text-decoration: none;
-    font-weight: 1000;
-    font-size: 18px;
-    &:hover {
-        text-decoration: underline;
-        cursor: pointer;
-    }
-`;
 const Linhas = styled.div`
-    width: 100%;
-    max-width: 1200px;
-    border: none;
-    border-top: 1px solid white;
-    margin: 20px 0;
+  width: 100%;
+  max-width: 1200px;
+  border: none;
+  border-top: 1px solid white;
+  margin: 20px 0;
+
+  @media (max-width: 480px) {
+    margin: 12px 0;
+  }
 `;
 
 const CardRodape = styled.div`
-    width: 100%;
-    background-color: #9AECED;
-    position: fixed;
-    bottom: 0;
+  width: 100%;
+  background-color: #9AECED;
+  position: fixed;
+  bottom: 0;
+
+  @media (max-width: 480px) {
+    position: sticky;
+  }
 `;
 
 const BolaDoPerfil = styled.div`
-    width: 60px; 
-    aspect-ratio: 1 / 1; 
+  width: 60px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  margin-left: 20px;
+  cursor: pointer;
+  border: 3px solid #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #131D47;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 50%;
-    margin-left: 20px;
-    cursor: pointer;
-    border: 3px solid #fff;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #131D47;
-    flex-shrink: 0; /* impede de ser achatado dentro do flex container */
+    display: block;
+  }
 
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-        display: block;
-    }
+  @media (max-width: 480px) {
+    width: 45px;
+    margin-left: 8px;
+  }
 `;
-
 export default function Conteudo({id}) {
     const [materias, setMaterias] = useState([]);
     const [conteudos, setConteudos] = useState([]);
