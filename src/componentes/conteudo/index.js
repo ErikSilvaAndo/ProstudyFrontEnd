@@ -4,6 +4,18 @@ import { href, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Logo from '../imagens/logo2.png'
 
+const Container = styled.div`
+    background-color: #131D47;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
 const Header = styled.header`
   width: 100%;
   display: flex;
@@ -17,6 +29,11 @@ const Header = styled.header`
     padding: 8px 0;
     margin-bottom: 12px;
   }
+`;
+
+const LogoContainer = styled.div`
+    display: flex;
+    align-items: center;
 `;
 
 const LogoImage = styled.img`
@@ -48,6 +65,7 @@ const Nav = styled.nav`
   }
 `;
 
+
 const NavLink = styled.a`
   color: #fff;
   font-weight: bold;
@@ -76,6 +94,10 @@ const MainContent = styled.div`
   }
 `;
 
+const SearchSection = styled.div`
+    margin-bottom: 40px;
+`;
+
 const Titulo = styled.label`
   font-size: 32px;
   margin-bottom: 20px;
@@ -85,6 +107,14 @@ const Titulo = styled.label`
     width: 90%;
     line-height: 26px;
   }
+`;
+
+const SearchInputContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
 `;
 
 const SearchInput = styled.input`
@@ -162,6 +192,17 @@ const Rodape = styled.footer`
     padding: 12px 10px;
     align-items: center;
   }
+`;
+
+const LinksRodape = styled.a`
+    color: #000;
+    text-decoration: none;
+    font-weight: 1000;
+    font-size: 18px;
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
 `;
 
 const Linhas = styled.div`
