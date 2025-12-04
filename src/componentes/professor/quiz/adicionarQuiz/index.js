@@ -133,7 +133,7 @@ export default function AdicionarQuiz() {
         }
 
 
-        setEstaCarregando(true);
+        setEstaCarregando(false);
 
         try {
             const resposta = await fetch('https://prostudy-back-end.vercel.app/quiz/criarQuiz', {
