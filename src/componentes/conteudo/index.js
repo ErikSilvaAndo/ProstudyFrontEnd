@@ -11,6 +11,7 @@ const Container = styled.div`
     min-height: 100vh;
     padding: 20px;
     box-sizing: border-box;
+    justify-content: space-between;  /* empurra topo e rodapé */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,18 +51,14 @@ const LogoImage = styled.img`
 `;
 
 const Nav = styled.nav`
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 50px;
   gap: 55px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 
-  @media (max-width: 480px) {
-    position: static;
-    gap: 12px;
-    margin-top: 8px;
-  }
 `;
 
 
@@ -180,7 +177,7 @@ const Rodape = styled.footer`
   max-width: 1200px;
   display: flex;
   justify-content: space-between;
-  margin-left: 150px;
+  margin: 0 auto;
   padding: 20px 0;
   background-color: #9AECED;
 
@@ -218,10 +215,7 @@ const CardRodape = styled.div`
   width: 100%;
   background-color: #9AECED;
   bottom: 0;
-
-  @media (max-width: 480px) {
-    position: sticky;
-  }
+  margin-top: auto;
 `;
 
 const BolaDoPerfil = styled.div`

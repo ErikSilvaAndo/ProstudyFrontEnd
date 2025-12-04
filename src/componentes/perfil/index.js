@@ -13,6 +13,10 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media(max-width: 480px) {
+        padding: 10px;
+    }
 `;
 
 const Header = styled.header`
@@ -22,12 +26,21 @@ const Header = styled.header`
     justify-content: space-between;
     padding: 10px 0;
     margin-bottom: 20px;
+
+    @media(max-width: 480px) {
+        flex-direction: column;
+        gap: 10px;
+    }
 `;
 
 const LogoImage = styled.img`
     width: 200px;
     height: 120px;
-    margin-right: 10px;
+
+    @media(max-width: 480px) {
+        width: 150px;
+        height: auto;
+    }
 `;
 
 const BolaDoPerfil = styled.div`
@@ -55,6 +68,15 @@ const BolaDoPerfil = styled.div`
         text-align: center;
         padding: 10px 0;
     }
+
+    @media(max-width: 480px) {
+        width: 180px;
+        height: 180px;
+
+        &:hover::after {
+            font-size: 12px;
+        }
+    }
 `;
 
 const FotoPerfil = styled.img`
@@ -67,7 +89,11 @@ const Label = styled.label`
     color: #fff;
     font-weight: bold;
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+
+    @media(max-width: 480px) {
+        font-size: 16px;
+    }
 `;
 
 const Input = styled.input`
@@ -78,6 +104,11 @@ const Input = styled.input`
     text-align: center;
     margin-bottom: 10px;
     font-size: 20px;
+
+    @media(max-width: 480px) {
+        font-size: 16px;
+        height: 45px;
+    }
 `;
 
 const CardLabelInput = styled.div`
@@ -85,6 +116,10 @@ const CardLabelInput = styled.div`
     flex-direction: column;
     margin-bottom: 20px;
     width: 75%;
+
+    @media(max-width: 480px) {
+        width: 100%;
+    }
 `;
 
 const VoltarBotao = styled.a`
@@ -97,14 +132,23 @@ const VoltarBotao = styled.a`
 
     &:hover{
         cursor: pointer;
-        text-decoration: underline
+        text-decoration: underline;
+    }
+
+    @media(max-width: 480px) {
+        font-size: 14px;
     }
 `;
 
 const SucessoAoLogar = styled.p`
     color: #9AECED;
     font-weight: bold;
+
+    @media(max-width: 480px) {
+        font-size: 14px;
+    }
 `;
+
 
 export default function MeuPerfil() {
     const [erro, setErro] = useState(false);
@@ -113,6 +157,8 @@ export default function MeuPerfil() {
     const [imagemPreview, setImagemPreview] = useState(null);
     const [imagemBase64, setImagemBase64] = useState(null);
     const [loginSucesso, setLoginSucesso] = useState(false);
+
+    const fileInputRef = React.useRef(null);
 
     const navigation = useNavigate();
 
@@ -222,20 +268,20 @@ export default function MeuPerfil() {
                 <SucessoAoLogar>Atualizado com sucesso</SucessoAoLogar>
             )}
 
-            <BolaDoPerfil>
+            <BolaDoPerfil onClick={() => fileInputRef.current.click()}>
                 {imagemPreview ? (
                     <FotoPerfil src={imagemPreview} alt="Foto de perfil" />
                 ) : (
                     <p style={{ color: "#131D47", fontWeight: "bold" }}>Sem imagem</p>
                 )}
             </BolaDoPerfil>
-
             <input
                 type="file"
                 accept="image/*"
                 onChange={handleImagemChange}
-                style={{ marginBottom: "15px" }}
-            />
+                ref={fileInputRef}
+                style={{ display: "none" }}
+            />  
 
             <CardLabelInput>
                 {Array.isArray(usuario) &&
