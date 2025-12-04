@@ -175,7 +175,7 @@ const MateriasCardPesquisa = styled(MateriasCard)`
   color: #fff;
 `;
 
-const Rodape = styled.footer`
+const Rodape = styled.div`
   width: 100%;
   max-width: 1200px;
   display: flex;
