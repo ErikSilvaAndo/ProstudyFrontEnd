@@ -12,12 +12,22 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
+
+    @media (max-width: 480px) {
+        padding: 15px;
+    }
 `;
 
 const CardLinkVoltar = styled.div`
     position: absolute;
     top: 20px;
-    left: 20px; 
+    left: 20px;
+
+    @media (max-width: 480px) {
+        top: 10px;
+        left: 10px;
+    }
 `;
 
 const LinkVoltar = styled.a`
@@ -27,42 +37,90 @@ const LinkVoltar = styled.a`
     font-weight: bold;
     padding: 10px 20px;
     cursor: pointer;
+
+    @media (max-width: 480px) {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
 `;
 
 const CardTexto = styled.div`
     display: flex;
-    text-align: justify;
-    width: 1000px;
     flex-direction: column;
+    width: 1000px;
+    text-align: justify;
+    margin-top: 20px;
+
+    @media (max-width: 768px) {
+        width: 90%;
+    }
+
+    @media (max-width: 480px) {
+        width: 100%;
+        margin-top: 10px;
+    }
 `;
 
 const Texto = styled.p`
     font-size: 20px;
     letter-spacing: 1px;
+    line-height: 28px;
+
+    @media (max-width: 480px) {
+        font-size: 16px;
+        line-height: 24px;
+    }
 `;
 
 const ListaTexto = styled.li`
     font-size: 18px;
     letter-spacing: 1px;
     margin-left: 30px;
+    margin-top: 5px;
+
+    @media (max-width: 480px) {
+        font-size: 15px;
+        margin-left: 15px;
+    }
 `;
 
 const Titulo = styled.h1`
-    font-size: 24px;
+    font-size: 28px;
+    margin-top: 40px;
+    text-align: center;
+
+    @media (max-width: 480px) {
+        font-size: 22px;
+        margin-top: 20px;
+    }
 `;
 
 const TituloTexto = styled.h2`
     font-size: 22px;
+    margin-top: 20px;
+
+    @media (max-width: 480px) {
+        font-size: 18px;
+    }
 `;
 
 const Imagem = styled.img`
     width: 400px;
-    margin-top: 10px
+    margin-top: 10px;
+
+    @media (max-width: 480px) {
+        width: 200px;
+    }
 `;
 
 const CardTitulo = styled.div`
     margin-top: 50px;
+
+    @media (max-width: 480px) {
+        margin-top: 30px;
+    }
 `;
+
 
 export default function PoliticaFooter() {
     const navigation = useNavigate();

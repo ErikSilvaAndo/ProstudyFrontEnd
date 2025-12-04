@@ -11,12 +11,18 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
 `;
 
 const CardLinkVoltar = styled.div`
     position: absolute;
     top: 20px;
-    left: 20px; 
+    left: 20px;
+
+    @media (max-width: 600px) {
+        top: 10px;
+        left: 10px;
+    }
 `;
 
 const LinkVoltar = styled.a`
@@ -26,42 +32,84 @@ const LinkVoltar = styled.a`
     font-weight: bold;
     padding: 10px 20px;
     cursor: pointer;
+
+    @media (max-width: 600px) {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
 `;
 
 const CardTexto = styled.div`
     display: flex;
     text-align: justify;
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
     flex-direction: column;
+    margin-top: 20px;
+    padding: 0 10px;
 `;
 
 const Texto = styled.p`
     font-size: 20px;
     letter-spacing: 1px;
+
+    @media (max-width: 600px) {
+        font-size: 16px;
+    }
 `;
 
 const ListaTexto = styled.li`
     font-size: 18px;
     letter-spacing: 1px;
     margin-left: 30px;
+
+    @media (max-width: 600px) {
+        font-size: 15px;
+        margin-left: 15px;
+    }
 `;
 
 const Titulo = styled.h1`
-    
+    font-size: 32px;
+
+    @media (max-width: 600px) {
+        font-size: 24px;
+    }
 `;
 
 const TituloTexto = styled.h2`
     font-size: 22px;
+
+    @media (max-width: 600px) {
+        font-size: 18px;
+    }
 `;
 
 const Imagem = styled.img`
     width: 400px;
-    margin-top: 50px
+    margin-top: 50px;
+
+    @media (max-width: 600px) {
+        width: 200px;
+        margin-top: 30px;
+    }
 `;
 
 const CardTitulo = styled.div`
     margin-top: 30px;
     text-align: center;
+
+    p {
+        font-size: 18px;
+    }
+
+    @media (max-width: 600px) {
+        margin-top: 20px;
+
+        p {
+            font-size: 14px;
+        }
+    }
 `;
 
 export default function TermosUsoFooter() {
