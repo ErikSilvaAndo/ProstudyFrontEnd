@@ -186,7 +186,7 @@ const MateriasCardPesquisa = styled.div`
   border: 2px solid #9aeced;
   border-radius: 10px;
   width: 120px;
-  height: 90px;
+  height:250px;
   display: flex;
   justify-content: center;
   align-items: center;
