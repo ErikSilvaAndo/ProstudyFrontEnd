@@ -220,7 +220,6 @@ const Linhas = styled.div`
 const CardRodape = styled.div`
   width: 100%;
   background-color: #9AECED;
-//   position: fixed;
   bottom: 0;
 
   @media (max-width: 480px) {
