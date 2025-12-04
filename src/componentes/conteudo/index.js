@@ -59,7 +59,6 @@ const Nav = styled.nav`
 
   @media (max-width: 480px) {
     position: static;
-    flex-direction: column;
     gap: 12px;
     margin-top: 8px;
   }
