@@ -214,7 +214,7 @@ const Linhas = styled.div`
   }
 `;
 
-const CardRodape = styled.div`
+const CardRodape = styled.footer`
   width: 100%;
   background-color: #9AECED;
   bottom: 0;
