@@ -119,7 +119,6 @@ export default function AdicionarQuiz() {
 
     const resetarFormulario = () => {
         setTitulo('');
-        setDescricao('');
         setLink('');
     };
 
@@ -127,7 +126,7 @@ export default function AdicionarQuiz() {
         e.preventDefault();
         setErro('');
 
-        if (!titulo || !descricao || !link) {
+        if (!titulo || !link) {
             setErro('Por favor, preencha todos os campos e selecione os arquivos.');
             return;
         }
