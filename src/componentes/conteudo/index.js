@@ -185,11 +185,9 @@ const Rodape = styled.footer`
   background-color: #9AECED;
 
   @media (max-width: 480px) {
-    flex-direction: column;
     gap: 10px;
     margin-left: 0;
     padding: 12px 10px;
-    align-items: center;
   }
 `;
 
