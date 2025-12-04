@@ -198,6 +198,7 @@ export default function AdicionarQuiz() {
     
     
     return (
+        <>
         <Container>
                 <LogoImagem src={Logo}></LogoImagem>
                 <form onSubmit={aoSubmeter}>
@@ -242,6 +243,7 @@ export default function AdicionarQuiz() {
                     <VoltarBotao onClick={() => navigate(-1)} >Voltar</VoltarBotao>
                 </CardBotao>
                 </form>
-        </Container>
+            </Container>
+        </>
     )
 }
