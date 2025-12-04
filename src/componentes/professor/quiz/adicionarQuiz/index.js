@@ -107,7 +107,6 @@ const LogoImagem = styled.img`
 
 export default function AdicionarQuiz() {
     const [titulo, setTitulo] = useState('');
-    const [descricao, setDescricao] = useState('');
     const [link, setLink] = useState('');
     const [materias, setMateria] = useState([]);
     const [id_materia, setIdMateria] = useState();
