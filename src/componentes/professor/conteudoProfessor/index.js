@@ -317,7 +317,7 @@ export default function Conteudo({id}) {
                 </LogoContainer>
             </Header>
                 <Nav>
-                    <NavLink href="/conteudos">INÍCIO</NavLink>
+                    <NavLink href="/conteudosProfessor">INÍCIO</NavLink>
                     <NavLink href="/listarQuizProfessor">QUIZ</NavLink>
                     <NavLink onClick={irParaPerfil}>MEU PERFIL</NavLink>
                     <NavLink href="/" onClick={logout}>SAIR</NavLink>

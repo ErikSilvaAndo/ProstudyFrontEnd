@@ -209,7 +209,7 @@ export default function AdicionarQuiz() {
                                 {Array.isArray(materias) &&
                                     materias.map(item => (
                                         <Option key={item.id_materia} value={item.id_materia}>
-                                            {item.nome} {item.id_materia}
+                                            {item.nome}
                                         </Option>
                                     ))}
                             </Select>
