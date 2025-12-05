@@ -284,19 +284,20 @@ export default function ListarQuizProfessor() {
                 </SearchInputContainer>
             </SearchSection>
 
-            
             {busca !== "" && (
                 <>
                     <h2 style={{ marginTop: 0 }}>Resultados da busca:</h2>
                     <SeccaoMaterias>
                         {quizFiltrados.length > 0 ? (
                             quizFiltrados.map((item) => (
-                                <MateriasCardPesquisa
-                                    key={item.id_quiz}
-                                    onClick={() => navigate(`/editarQuiz/${item.id_quiz}`)}
-                                >
-                                    {item.titulo}
-                                </MateriasCardPesquisa>
+                                <>
+                                    <MateriasCardPesquisa
+                                        key={item.id_quiz}
+                                        onClick={() => window.open(item.link, '_blank')}
+                                    >
+                                        {item.titulo}
+                                    </MateriasCardPesquisa>
+                                </>
                             ))
                         ) : (
                             <p>Nenhum quiz encontrado.</p>
