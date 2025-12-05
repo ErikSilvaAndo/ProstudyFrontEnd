@@ -53,7 +53,7 @@ const CardQuiz = styled.div`
   border: 2px solid white;
   border-radius: 12px;
 
-  width: 100px;
+  width: 150px;
   max-width: 220px;
   padding: 15px;
 
